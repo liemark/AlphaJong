@@ -82,7 +82,7 @@ function getTileDangerForPlayer(tile, player, playerPerspective = 0) {
 	//Does the player have no yaku yet? Yakuhai is likely -> Honor tiles are 10% more dangerous
 	if (!hasYaku(player)) {
 		if (tile.type == 3 && (tile.index > 4 || tile.index == getSeatWind(player) || tile.index == getRoundWind()) &&
-			getNumberOfTilesAvailable(tile.type, tile.index) > 2) {
+			getNumberOfTilesAvailable(tile.index, tile.type) > 2) {
 			danger *= 1.1;
 		}
 	}
